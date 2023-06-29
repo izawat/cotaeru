@@ -1,0 +1,6 @@
+<h1>答えるページを作る</h1>
+<button (click)="createCotaeruPage()">新規作成</button>
+
+<div *ngFor="let room of rooms">
+  <a [routerLink]="['/room', room.id]">{{room.name}}</a>
+</div>

@@ -1,0 +1,25 @@
+<ng-container *ngIf="!roomNotFound">
+  <p>答えるページです！このページのURLを回答者に共有してね！</p>
+
+  <ng-container *ngIf="myUserId === ''">
+    あなたのお名前: <input type="text" [(ngModel)]="inputUserName" />
+    <button (click)="joinRoom(inputUserName)">登録</button>
+    <br>
+  </ng-container>
+
+  <ng-container *ngIf="!isOpened">
+    <button (click)="open()">回答オープン！</button>
+  </ng-container>
+  <ng-container *ngIf="isOpened">
+    <button (click)="reset()">回答隠す！</button>
+  </ng-container>
+
+
+  <ng-container *ngFor="let user of users">
+    <app-answer-box [userId]="user.id" [userName]="user.name" [answer]="user.answer" [isMyself]="user.id === myUserId" [isOpened]="isOpened" (registerAnswer)="registerAnswer($event)"></app-answer-box>
+  </ng-container>
+</ng-container>
+
+<ng-container *ngIf="roomNotFound">
+  <h1>そんなページはない</h1>
+</ng-container>

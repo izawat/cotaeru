@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "cotaeru-46ca5"
+  },
+  "targets": {
+    "cotaeru-46ca5": {
+      "hosting": {
+        "cotaeru": [
+          "cotaeru-46ca5"
+        ]
+      }
+    }
+  }
+}

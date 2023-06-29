@@ -1,0 +1,12 @@
+<div class="answer-box">
+  <p>回答者: {{userName}}</p>
+  <ng-container *ngIf="isMyself || isOpened">
+    <p>お答え: {{answer}}<p>
+  </ng-container>
+  <ng-container *ngIf="!isMyself && !isOpened">
+    <p>お答え: ?????????<p>
+  </ng-container>
+  <ng-container *ngIf="isMyself">
+    <input type="text" [(ngModel)]="myAnswer"><button (click)="registerMyAnswer(myAnswer)">登録</button>
+  </ng-container>
+</div>
